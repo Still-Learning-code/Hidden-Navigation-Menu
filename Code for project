@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/515aecdffd.js"crossorgin"anonymous"></script>
+  </head>
+  <body>
+    <input type="checkbox" id="toggle" name="toggle">
+
+<ul class="navigation-menu">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Contact</a></li>
+  <li><a href="#">Blog</a></li>
+</ul>
+
+<div class="navbar">
+  <label for="toggle"><i class="fa fa-bars"></i> Menu</label>
+</div>
+    <div class="content">
+  <h1>Hidden Navigation Menu</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut laudantium deserunt optio sapiente voluptas, quae quidem perferendis voluptatem incidunt, voluptatum beatae blanditiis quam fugit deleniti rem vero tempore? Doloribus, reprehenderit!</p>
+       <h2>Lorem ipsum dolor.</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut laudantium deserunt optio sapiente voluptas, quae quidem perferendis voluptatem incidunt, voluptatum beatae blanditiis quam fugit deleniti rem vero tempore? Doloribus, reprehenderit!</p>
+  <h3>Lorem ipsum dolor sit.</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, perferendis ipsam amet. Suscipit explicabo pariatur, necessitatibus voluptatum enim velit animi, nesciunt modi facilis impedit, sequi quaerat! Beatae ad, enim porro.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione optio a delectus dolor rerum commodi necessitatibus facere eveniet ipsam dolores! Atque architecto nulla magni reprehenderit ad, odio asperiores! Error, molestias.</p>
+</div>
+  </body>
+</html>
+
+CSS
+
+body{
+	background: linear-gradient(45deg, rgba(34,164,116,1) 20%, rgba(41,47,143,1) 100%);
+}
+.fa-bars {
+  margin-right: 10px;
+}
+
+.navigation-menu {
+  background: #111;
+  height: 100%;
+  width: 50%;
+  padding: 60px 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  position: fixed;
+  right: -45%;
+  top: 0;
+  transition: all 0.5s;
+  z-index: 1;
+  font-size: 60px;
+}
+
+.navigation-menu li {
+  padding: 30px 0;
+}
+
+.navigation-menu li:nth-of-type(2n) {
+  background: #222;
+}
+
+.navigation-menu li:hover {
+  background: #444;
+}
+
+.navigation-menu a {
+  color: #E5E5E5;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  transition:all 0.3s;
+}
+
+
+
+.navbar {
+  background: #E5E5E5;
+  padding: 20px;
+  position: fixed;
+  width: 95%;
+  top: 0;
+}
+
+.content {
+  width: 80%;
+  margin: 40px auto;
+  padding-top: 75px;
+  transition: all 0.5s; 
+  position: relative;
+  left: 0;
+}
+
+/* Hide the checkbox */
+#toggle {
+  display: none; 
+}
+
+/* Use this label to toggle the sliding menu */
+label[for="toggle"] {
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: 40px;
+}
+
+/* Slide menu when checkbox is checked */
+input#toggle:checked + ul.navigation-menu {
+  right: 0;
+}
+
+/* Also slide content when checkbox is checked */
+input#toggle:checked ~ .content {
+  left: -45%;
+}
+
+
+
